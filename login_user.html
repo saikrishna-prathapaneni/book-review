@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <style>
+        body {
+  background-image: url('Book Panda2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  
+}
+
         .cla{
       
 text-align: center;
 
         }
-        h2{
+        h2{padding-top:100px;
             text-align: center;
-            padding-bottom: 100px;
+            padding-bottom: 50px;
         }
         label{
            padding-left: 5px;
@@ -17,10 +25,12 @@ text-align: center;
             padding-bottom: 5px;
         }
       
-        .login{
+        .login{ background-color: #ffffff;
             padding-top: 30px;
-            position: absolute;left:35%; margin-left: 30px; width: 450px; height: 400px; border: 1px solid black;
+            position: absolute;left:35%; margin-left: 30px; width: 450px; height: 400px;
             padding-left: 10px;
+            opacity: 0.6;
+       
              }
              input{ width: 80%;
                  padding-left: 10px;
@@ -37,7 +47,7 @@ text-align: center;
 
 </head>
 <body>
-    <h2> Enter login Credentials !</h2>
+    <h2> Book Panda Login</h2>
     <div class ='login'>
         <form action="{{ url_for('login') }}" method="post" id='cla'></form>
         <label for="fname" >login id</label><br>
