@@ -31,9 +31,16 @@
     document.getElementById('message').innerHTML = 'ok';
   } else {
     document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'notok';
+    document.getElementById('message').innerHTML = 'not ok';
+  }}
+  var aler=function{
+      if (document.getElementBylab('fname')).value=="" {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'important';
+
+      }
   }
-}
+
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,8 +59,9 @@
           <h3 style="padding-left: 100px ;"><b>Bookpanda Signup</b></h3>
         <form action="{{ url_for('login') }}" method="post" id='cla'></form>
         <label for="fname" >login id</label><br>
-        <input type="text" id="fname" name="fname"><br>
+        <input type="text" id="fname" name="fname" onkeyup='aler();'><br>
         <label for="lname" class="lab">Password</label><br>
+        <span id="imp"></span>
         <input type="password"  name="password" id="password" type="password" onkeyup='check();'>
         <label for="lname" class="lab"type="password"   >Confirm Password</label><br>
         <input type="password"  name="confirm_password" id="confirm_password"  onkeyup='check();'>
