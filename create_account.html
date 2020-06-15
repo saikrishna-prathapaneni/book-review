@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body{
+            padding-top: 100px;
+        }
+        .login{  background-color: rgb(236, 236, 236);
+            padding-top: 10px;
+            position: absolute;left:35%; margin-left: 30px; width: 450px; height: 400px;
+            padding-left: 10px;
+            opacity: 0.7;
+            box-shadow: 5px 5px 5px grey;
+            
+       
+             }
+             input{ width: 80%;
+                 padding-left: 10px;
+                 padding-bottom: 2px;
+                border: none;
+                  border-bottom: 1px solid black;
+                  transition: width 0.4s ease-in-out;
+                   } 
+        
+    </style>
+    <script>
+        var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'ok';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'notok';
+  }
+}
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
-    <h2>create account</h2>
-    
+  
+    <div class ='login'>
+        <h2 style="text-align: center;">Sign up!</h2>
+        <a class="navbar-brand" style=" padding-left:185px ;">
+            <img src="bookpanda.png" width="50" height="50" alt="" loading="lazy">
+            
+          </a>
+          <h3 style="padding-left: 100px ;"><b>Bookpanda Signup</b></h3>
+        <form action="{{ url_for('login') }}" method="post" id='cla'></form>
+        <label for="fname" >login id</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname" class="lab">Password</label><br>
+        <input type="password"  name="password" id="password" type="password" onkeyup='check();'>
+        <label for="lname" class="lab"type="password"   >Confirm Password</label><br>
+        <input type="password"  name="confirm_password" id="confirm_password"  onkeyup='check();'>
+        <span id='message'></span>
+        <div style="padding-top: 10px;">
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Signup</button>
+        </div>
+        </form>  
+ 
+  </div>
 </body>
 </html>
