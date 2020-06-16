@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <style>
-        body{
+        body{background-image: url('sky.png');
             padding-top: 100px;
+            background-size: 100% 
         }
         .login{  background-color: rgb(236, 236, 236);
             padding-top: 10px;
@@ -33,12 +34,19 @@
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'not ok';
   }}
-  var aler=function{
-      if (document.getElementBylab('fname')).value=="" {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = 'important';
-
+  var aler = function() {
+    if (document.getElementById('log').value =='') {
+      document.getElementById('imp').style.color = 'red';
+      document.getElementById('log').style.borderBottomColor='red';
+    document.getElementById('imp').innerHTML = 'req';
+    } else {
+      f (document.getElementById('log').value !='')
+      {
+        document.getElementById('log').style.borderBottomColor='blue';
       }
+      
+    }
+
   }
 
     </script>
@@ -59,15 +67,17 @@
           <h3 style="padding-left: 100px ;"><b>Bookpanda Signup</b></h3>
         <form action="{{ url_for('login') }}" method="post" id='cla'></form>
         <label for="fname" >login id</label><br>
-        <input type="text" id="fname" name="fname" onkeyup='aler();'><br>
-        <label for="lname" class="lab">Password</label><br>
+       
+        <input type="text" id="log" name="fname" onkeyup='aler();' required><br> 
         <span id="imp"></span>
+        <label for="lname" class="lab">Password</label><br>
+       
         <input type="password"  name="password" id="password" type="password" onkeyup='check();'>
         <label for="lname" class="lab"type="password"   >Confirm Password</label><br>
         <input type="password"  name="confirm_password" id="confirm_password"  onkeyup='check();'>
         <span id='message'></span>
         <div style="padding-top: 10px;">
-        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Signup</button>
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="aler();">Signup</button>
         </div>
         </form>  
  
