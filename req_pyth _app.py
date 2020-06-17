@@ -12,22 +12,22 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    flights = db.execute("SELECT * FROM flights").fetchall()
-    return render_template("main_ind.html", flights=flights)
+    return render_template("main_ind.html")
 
 
 
-@app.route("/book",methods=['POST'])
-def book():
+#@app.route("/create",methods=['POST'])
+#def create():
+#   email=request.form.get('login id')
+#    password=request.form.get('password')
 
-    name=request.form.get('name')
-    try:
-        flight_id = int(request.form.get("flight_id"))
-    except ValueError:
-        return render_template("error.html", message="Invalid flight number.")
-    if db.execute('SELECT * FROM flights WHERE id=:id',{'id':flight_id}).rowcount==0:
-        return render_template('error.html')
+#    try:
+#        flight_id = int(request.form.get("flight_id"))
+ #   except ValueError:
+ #       return render_template("error.html", message="Invalid flight number.")
+#    if db.execute('SELECT * FROM users WHERE id=:id',{'id':flight_id}).rowcount==0:
+#        return render_template('error.html')
 
-    db.execute('INSERT INTO passengers (name,flight_id) VALUES (:na,:fi)',{'na':name,'fi':flight_id})
-    db.commit()
-    return render_template('success.html',msg="hell ya!")
+#   db.execute('INSERT INTO passengers (name,flight_id) VALUES (:na,:fi)',{'na':name,'fi':flight_id})
+#    db.commit()
+#    return render_template('success.html',msg="hell ya!")
