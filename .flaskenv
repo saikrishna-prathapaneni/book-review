@@ -1,2 +1,2 @@
-FLASK_APP=req_pyth_app.py
+FLASK_APP=application.py
 FlASK_ENV=development
