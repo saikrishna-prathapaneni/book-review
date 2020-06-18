@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="main_ind.html">Home</a>
+              <a class="nav-link" href="{{ url_for('home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -44,7 +44,7 @@
               <a class="nav-link" href="#">Contact</a>
             </li>    
             <li class="nav-item">
-              <a class="nav-link" href="create_account.html">Create account</a>
+              <a class="nav-link" href="{{url_for('create')}}">Create account</a>
             </li>  
           </ul>
         </div>  
@@ -58,7 +58,7 @@
 <h3>login to the account!</h3>
 <div>
 
-    <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="document.location = 'login_user.html'" >Start Reading</button>
+    <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="window.location.href='{{url_for('login')}}'">Start Reading</button>
   
 </div>
 
