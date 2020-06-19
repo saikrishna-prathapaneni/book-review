@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <style>
-        body{background-image: url('sky.png');
+        body{background-image: url({ url_for('static', filename='sky.png') });
             padding-top: 100px;
             background-size: 100% 
         }
@@ -61,7 +61,7 @@
     <div class ='login'>
         <h2 style="text-align: center;">Sign up!</h2>
         <a class="navbar-brand" style=" padding-left:185px ;">
-            <img src="bookpanda.png" width="50" height="50" alt="" loading="lazy">
+            <img src=" url_for('static', filename='bookpanda.png')" width="50" height="50" alt="" loading="lazy">
             
           </a>
           <h3 style="padding-left: 100px ;"><b>Bookpanda Signup</b></h3>
