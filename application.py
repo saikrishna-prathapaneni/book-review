@@ -14,13 +14,27 @@ app = Flask(__name__)
 def home():
     return render_template("main_ind.html")
 
-@app.route("/create")
-def create():
-    return render_template("create_account.html")
-
 @app.route("/login")
 def login():
-    return render_template("login_user.html")
+     email=request.form.get('login id')
+     password=request.form.get('password')
+     if db.execute('SELECT * FROM users WHERE email=:id AND pass=:password',{'id':email,'password':password}).rowcount==0:
+         return render_template('error.html')
+        
+        
+     db.execute('SELECT * FROM users WHERE email=:id AND pass=:password',{'id':email,'password':password})
+     return render_template('user.html',msg=email)
+@app.route("/create")
+def create():
+     email=request.form.get('login id')
+     password=request.form.get('confirm password')
+
+     db.execute('INSERT INTO users (email,pass) VALUES (:na,:fi)',{'na':email,'fi':password})
+     db.commit()
+     return render_template('success.html',msg="hell ya!")
+
+     
+
 
 
 #@app.route("/hello")
