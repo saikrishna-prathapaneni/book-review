@@ -1,11 +1,24 @@
 import csv
 import os
+from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 engine = create_engine("postgresql://postgres:Saikri@23@localhost/book_review")
 db = scoped_session(sessionmaker(bind=engine))
+
+
+dbs=SQLAlchemy()
+
+class passengers():
+    pass
+
+
+class books():
+    pass
+
+
 
 
 app = Flask(__name__)
